@@ -1,0 +1,9 @@
+install:
+- FILE_CORE_JAR="-Dfile=core-3.0.3-classes.jar"
+- FILE_CORE_AAR="-Dfile=core-3.0.3.aar"
+- FILE_UI_JAR="-Dfile=ui-3.0.3-classes.jar"
+- FILE_UI_AAR="-Dfile=ui-3.0.3.aar"
+- mvn install:install-file $FILE_CORE_JAR -DgroupId=com.khoros.messaging -DartifactId=core -Dversion=3.0.3 -Dpackaging=jar
+- mvn install:install-file $FILE_CORE_AAR -DgroupId=com.khoros.messaging -DartifactId=core -Dversion=3.0.3 -Dpackaging=aar -DpomFile=core-pom.xml
+- mvn install:install-file $FILE_UI_JAR -DgroupId=com.khoros.messaging -DartifactId=ui -Dversion=3.0.3 -Dpackaging=jar
+- mvn install:install-file $FILE_UI_AAR -DgroupId=com.khoros.messaging -DartifactId=ui -Dversion=3.0.3 -Dpackaging=aar -DpomFile=ui-pom.xml
